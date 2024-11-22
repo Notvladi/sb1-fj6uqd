@@ -1,0 +1,3026 @@
+// Project Export for Claude
+
+// File: .vscode/snippets.json
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and \${1:label}, \${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  //   "scope": "javascript,typescript",
+  //   "prefix": "log",
+  //   "body": ["console.log('$1');", "$2"],
+  //   "description": "Log output to console"
+  // }
+}
+
+
+// File: claude-import.txt
+// Project: Orbital Map - A React-based interactive visualization
+// This file contains all the code from the project for easy import into Claude
+
+// File: package.json
+{
+  "name": "orbital-map",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.9.1",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
+
+// File: src/App.jsx
+import React from 'react';
+import EnhancedOrbitalMap from './components/EnhancedOrbitalMap';
+
+function App() {
+  return (
+    <div className="dark h-screen">
+      <EnhancedOrbitalMap />
+    </div>
+  );
+}
+
+export default App;
+
+// File: src/data/initialNodes.js
+export const initialNodes = [
+  { 
+    id: 'center',
+    name: 'Main Organization',
+    type: 'sun',
+    category: 'strategy',
+    status: 'active',
+    description: 'Central organization hub',
+    budget: 5000000,
+    spent: 2100000,
+    team: ['John D. (CEO)', 'Sarah M. (COO)', 'Mike R. (CTO)'],
+    kpis: [
+      { name: 'Revenue Growth', target: '25%', current: '18%' },
+      { name: 'Digital Adoption', target: '80%', current: '65%' },
+      { name: 'Customer Satisfaction', target: '95%', current: '92%' }
+    ],
+    risks: [
+      { severity: 'high', description: 'Market volatility impact' },
+      { severity: 'medium', description: 'Resource constraints' }
+    ],
+    timeline: {
+      start: '2024-01-01',
+      end: '2024-12-31',
+      milestones: [
+        { date: '2024-03-31', description: 'Q1 Digital Strategy Review' },
+        { date: '2024-06-30', description: 'Mid-year Transformation Assessment' }
+      ]
+    },
+    progress: 65
+  },
+  // ... [Rest of initialNodes data]
+];
+
+// File: src/components/OrbitalNode.jsx
+import React, { useState } from 'react';
+
+const categories = {
+  strategy: { color: '#36B37E', name: 'Strategy' },
+  operations: { color: '#6554C0', name: 'Operations' },
+  technology: { color: '#FF8B00', name: 'Technology' },
+  hr: { color: '#FF5630', name: 'HR' }
+};
+
+const OrbitalNode = ({ node, position, onSelect, scale }) => {
+  // ... [OrbitalNode component code]
+};
+
+export default OrbitalNode;
+
+// File: src/hooks/useOrbitalAnimation.js
+import { useState, useEffect, useRef } from 'react';
+
+export const useOrbitalAnimation = (initialScale = 1) => {
+  // ... [useOrbitalAnimation hook code]
+};
+
+// File: src/components/EnhancedOrbitalMap.jsx
+import React, { useState, useEffect } from 'react';
+import { Map, Layout, ZoomIn, ZoomOut, Maximize2, Minimize2 } from 'lucide-react';
+// ... [Rest of imports]
+
+const EnhancedOrbitalMap = () => {
+  // ... [EnhancedOrbitalMap component code]
+};
+
+export default EnhancedOrbitalMap;
+
+// [Additional components and files follow the same pattern]
+
+// File: index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbital Map</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap">
+    <style>
+      @supports (font-variation-settings: normal) {
+        :root { font-family: 'Inter var', sans-serif; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+// File: jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+
+// File: package.json
+{
+  "name": "orbital-map",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "export": "node export-for-claude.js"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.9.1",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.0.0"
+  }
+}
+
+// File: postcss.config.js
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+// File: src/App.jsx
+import React from 'react';
+import EnhancedOrbitalMap from './components/EnhancedOrbitalMap';
+
+function App() {
+  return (
+    <div className="dark h-screen">
+      <EnhancedOrbitalMap />
+    </div>
+  );
+}
+
+export default App;
+
+// File: src/components/DashboardView.jsx
+import React from 'react';
+import { 
+  TrendingUp, 
+  Users, 
+  AlertTriangle, 
+  DollarSign, 
+  Target, 
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+  XCircle,
+  BarChart2,
+  Calendar,
+  Briefcase,
+  Flag,
+  Gauge,
+  PieChart,
+  ScrollText,
+  Settings,
+  Sparkles
+} from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { format } from 'date-fns';
+
+const MetricTile = ({ title, value, trend, icon: Icon, color, data }) => (
+  <div className="bg-card rounded-xl p-6 border border-border/50">
+    <div className="flex items-center justify-between mb-3">
+      <div className="text-sm font-medium text-muted-foreground tracking-tight uppercase">{title}</div>
+      <Icon className={`h-4 w-4 ${color}`} />
+    </div>
+    <div className="flex items-baseline gap-2">
+      <span className="text-4xl font-black tracking-tighter">{value}</span>
+    </div>
+    <div className="h-[32px] w-full my-3">
+      <svg className="w-full h-full" viewBox="0 0 100 32">
+        <path
+          d={`M0 30 ${data.map((d, i) => `L${(i / (data.length - 1)) * 100} ${30 - d * 28}`).join(' ')}`}
+          fill="none"
+          strokeWidth="2"
+          stroke={color.replace('text-', 'rgb(var(--')?.replace('500', '500))')}
+          className="opacity-50"
+        />
+        <path
+          d={`M0 30 ${data.map((d, i) => `L${(i / (data.length - 1)) * 100} ${30 - d * 28}`).join(' ')} V30 H0`}
+          fill={color.replace('text-', 'rgb(var(--')?.replace('500', '500))')}
+          className="opacity-10"
+        />
+      </svg>
+    </div>
+    <div className="flex items-center gap-1 mt-1">
+      <TrendingUp className={`h-3 w-3 ${color}`} />
+      <span className={`text-xs font-medium ${color}`}>{trend}</span>
+    </div>
+  </div>
+);
+
+const getStatusIcon = (status) => {
+  switch (status) {
+    case 'on-track': return <CheckCircle2 className="h-4 w-4 text-emerald-500" />;
+    case 'at-risk': return <AlertCircle className="h-4 w-4 text-amber-500" />;
+    case 'delayed': return <XCircle className="h-4 w-4 text-rose-500" />;
+    default: return <AlertCircle className="h-4 w-4 text-gray-500" />;
+  }
+};
+
+const DashboardView = ({ nodes }) => {
+  // Calculate top metrics
+  const totalBudget = nodes.reduce((sum, node) => sum + (node.budget || 0), 0);
+  const totalSpent = nodes.reduce((sum, node) => sum + (node.spent || 0), 0);
+  const avgProgress = nodes.reduce((sum, node) => sum + (node.progress || 0), 0) / nodes.length;
+  const riskCount = nodes.reduce((count, node) => count + (node.risks?.length || 0), 0);
+  const teamSize = new Set(nodes.flatMap(node => node.team || [])).size;
+
+  // Sample data for line graphs
+  const mockData = [0.2, 0.4, 0.3, 0.8, 0.6, 0.9, 0.7];
+
+  return (
+    <div className="p-8 text-card-foreground h-screen overflow-auto">
+      {/* Top metrics grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <MetricTile
+          title="Total Budget"
+          value={`$${(totalBudget / 1000000).toFixed(1)}M`}
+          trend={`${(totalSpent / totalBudget * 100).toFixed(1)}% utilized`}
+          icon={DollarSign}
+          color="text-emerald-500"
+          data={mockData}
+        />
+        <MetricTile
+          title="Team Members"
+          value={teamSize}
+          trend="+3 this month"
+          icon={Users}
+          color="text-blue-500"
+          data={mockData}
+        />
+        <MetricTile
+          title="Active Projects"
+          value={nodes.length}
+          trend="2 launching soon"
+          icon={Target}
+          color="text-violet-500"
+          data={mockData}
+        />
+        <MetricTile
+          title="Active Risks"
+          value={riskCount}
+          trend="4 need attention"
+          icon={AlertTriangle}
+          color="text-amber-500"
+          data={mockData}
+        />
+      </div>
+
+      {/* Overall Progress */}
+      <Card className="mb-8 p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <Gauge className="h-5 w-5 text-muted-foreground" />
+            <h2 className="text-lg font-semibold">Overall Progress</h2>
+          </div>
+          <span className="text-sm text-muted-foreground">{avgProgress.toFixed(1)}% Complete</span>
+        </div>
+        <Progress value={avgProgress} className="h-2" />
+      </Card>
+
+      {/* Projects grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {nodes.map(node => (
+          <Card key={node.id} className="p-6">
+            {/* Header */}
+            <div className="flex justify-between items-start mb-6">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Settings className="h-5 w-5 text-muted-foreground" />
+                  <h3 className="text-lg font-semibold">{node.name}</h3>
+                </div>
+                <div className="text-sm text-muted-foreground">{node.description}</div>
+              </div>
+              <Badge variant={
+                node.status === 'on-track' ? 'success' :
+                node.status === 'at-risk' ? 'warning' :
+                'danger'
+              }>
+                <div className="flex items-center gap-1">
+                  {getStatusIcon(node.status)}
+                  <span>{node.status}</span>
+                </div>
+              </Badge>
+            </div>
+
+            {/* Progress */}
+            <div className="mb-6">
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-muted-foreground">Progress</span>
+                <span>{node.progress}%</span>
+              </div>
+              <Progress value={node.progress} className="h-2" />
+            </div>
+
+            {/* Budget Overview */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <PieChart className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm font-medium">Budget Overview</span>
+              </div>
+              <div className="bg-muted/10 p-3 rounded-lg">
+                <div className="grid grid-cols-2 gap-4 mb-2">
+                  <div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                      <DollarSign className="h-4 w-4 text-emerald-500" />
+                      Budget
+                    </div>
+                    <div className="text-lg font-semibold">${(node.budget / 1000).toFixed(0)}k</div>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                      <BarChart2 className="h-4 w-4 text-amber-500" />
+                      Spent
+                    </div>
+                    <div className="text-lg font-semibold">${(node.spent / 1000).toFixed(0)}k</div>
+                  </div>
+                </div>
+                <Progress value={(node.spent / node.budget) * 100} className="h-1.5" />
+                <div className="text-xs text-right text-muted-foreground mt-1">
+                  {Math.round((node.spent / node.budget) * 100)}% utilized
+                </div>
+              </div>
+            </div>
+
+            {/* Team Members */}
+            {node.team && node.team.length > 0 && (
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Users className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium">Team Members</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {node.team.map((member, index) => (
+                    <div key={index} className="flex items-center gap-2 bg-muted/10 p-2 rounded">
+                      <Briefcase className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm">{member}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* KPIs */}
+            {node.kpis && node.kpis.length > 0 && (
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Target className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium">Key Performance Indicators</span>
+                </div>
+                <div className="space-y-3">
+                  {node.kpis.map((kpi, index) => (
+                    <div key={index} className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="h-4 w-4 text-blue-400" />
+                          <span className="text-sm">{kpi.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Target className="h-4 w-4 text-blue-400" />
+                          <span className="text-sm font-medium">{kpi.target}</span>
+                        </div>
+                      </div>
+                      <Progress
+                        value={(parseFloat(kpi.current) / parseFloat(kpi.target.replace('%', ''))) * 100}
+                        className="h-1.5"
+                      />
+                      <div className="text-right text-xs text-muted-foreground">
+                        Current: {kpi.current}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Risks */}
+            {node.risks && node.risks.length > 0 && (
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium">Risk Assessment</span>
+                </div>
+                <div className="space-y-2">
+                  {node.risks.map((risk, index) => (
+                    <div key={index} className="flex items-center gap-2 bg-muted/10 p-2 rounded">
+                      <AlertTriangle 
+                        className={`h-4 w-4 ${
+                          risk.severity === 'high' ? 'text-rose-500' : 
+                          risk.severity === 'medium' ? 'text-amber-500' : 
+                          'text-blue-500'
+                        }`}
+                      />
+                      <span className="text-sm">{risk.description}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Timeline */}
+            {node.timeline?.milestones && node.timeline.milestones.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium">Timeline</span>
+                </div>
+                <div className="space-y-2">
+                  {node.timeline.milestones.map((milestone, index) => (
+                    <div key={index} className="flex items-center gap-3 bg-muted/10 p-2 rounded">
+                      <Calendar className="h-4 w-4 text-purple-400" />
+                      <div className="flex-1">
+                        <div className="text-sm">{milestone.description}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {format(new Date(milestone.date), 'MMM dd, yyyy')}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default DashboardView;
+
+// File: src/components/EnhancedOrbitalMap.jsx
+import React, { useState, useEffect } from 'react';
+import { Map, Layout, ZoomIn, ZoomOut, Maximize2, Minimize2 } from 'lucide-react';
+import NodeDetailsPanel from './NodeDetailsPanel';
+import DashboardView from './DashboardView';
+import OrbitalNode from './OrbitalNode';
+import { initialNodes } from '../data/initialNodes';
+import { useOrbitalAnimation } from '../hooks/useOrbitalAnimation';
+
+const EnhancedOrbitalMap = () => {
+  const [nodes, setNodes] = useState(initialNodes);
+  const [selectedNode, setSelectedNode] = useState(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isDashboardView, setIsDashboardView] = useState(false);
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  const { scale, setScale, calculateNodePosition } = useOrbitalAnimation(0.8);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+      setIsFullscreen(false);
+    }
+  };
+
+  const handleNodeUpdate = (updatedNode) => {
+    setNodes(nodes.map(node => 
+      node.id === updatedNode.id ? updatedNode : node
+    ));
+    setSelectedNode(updatedNode);
+  };
+
+  const center = {
+    x: dimensions.width / 2,
+    y: dimensions.height / 2
+  };
+
+  return (
+    <div className={`w-full h-screen bg-background relative ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+      {/* Controls */}
+      <div className="absolute top-4 right-4 space-y-2 z-10">
+        <button 
+          className="p-2 bg-card rounded-full hover:bg-accent text-muted-foreground hover:text-accent-foreground shadow-lg"
+          onClick={() => setIsDashboardView(!isDashboardView)}
+          title={isDashboardView ? "Switch to Map View" : "Switch to Dashboard View"}
+        >
+          {isDashboardView ? <Map size={20} /> : <Layout size={20} />}
+        </button>
+        <button 
+          className="p-2 bg-card rounded-full hover:bg-accent text-muted-foreground hover:text-accent-foreground shadow-lg"
+          onClick={toggleFullscreen}
+          title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+        >
+          {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
+        </button>
+        {!isDashboardView && (
+          <>
+            <button 
+              className="p-2 bg-card rounded-full hover:bg-accent text-muted-foreground hover:text-accent-foreground shadow-lg"
+              onClick={() => setScale(prev => Math.min(prev * 1.2, 2))}
+              title="Zoom In"
+            >
+              <ZoomIn size={20} />
+            </button>
+            <button 
+              className="p-2 bg-card rounded-full hover:bg-accent text-muted-foreground hover:text-accent-foreground shadow-lg"
+              onClick={() => setScale(prev => Math.max(prev / 1.2, 0.5))}
+              title="Zoom Out"
+            >
+              <ZoomOut size={20} />
+            </button>
+          </>
+        )}
+      </div>
+
+      {isDashboardView ? (
+        <DashboardView nodes={nodes} onUpdate={handleNodeUpdate} />
+      ) : (
+        <div className="relative w-full h-full">
+          <svg
+            width={dimensions.width}
+            height={dimensions.height}
+            className="absolute inset-0"
+          >
+            {/* Orbit paths */}
+            {nodes.map(node => {
+              if (node.type === 'sun') return null;
+              const parent = nodes.find(n => n.id === node.parentId);
+              const parentPos = parent ? calculateNodePosition(parent, nodes, center) : center;
+              const nodePos = calculateNodePosition(node, nodes, center);
+              const radius = Math.sqrt(
+                Math.pow(nodePos.x - parentPos.x, 2) + 
+                Math.pow(nodePos.y - parentPos.y, 2)
+              );
+
+              return (
+                <circle
+                  key={`orbit-${node.id}`}
+                  cx={parentPos.x}
+                  cy={parentPos.y}
+                  r={radius || 0}
+                  fill="none"
+                  stroke="#4B5563"
+                  strokeWidth={1}
+                  strokeDasharray="3,3"
+                  opacity={0.3}
+                />
+              );
+            })}
+            
+            {/* Nodes */}
+            {nodes.map(node => (
+              <OrbitalNode
+                key={node.id}
+                node={node}
+                position={calculateNodePosition(node, nodes, center)}
+                onSelect={setSelectedNode}
+                scale={scale}
+              />
+            ))}
+          </svg>
+
+          {/* Node Details Panel */}
+          {selectedNode && (
+            <div className="absolute left-4 top-4 w-96 bg-card/90 backdrop-blur-sm p-6 text-card-foreground rounded-lg shadow-xl">
+              <NodeDetailsPanel 
+                node={selectedNode}
+                nodes={nodes}
+                onUpdate={handleNodeUpdate}
+              />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default EnhancedOrbitalMap;
+
+// File: src/components/NodeDetailsPanel.jsx
+import React, { useState } from 'react';
+import { 
+  AlertTriangle, 
+  Users, 
+  DollarSign, 
+  Target, 
+  Clock, 
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+  Edit2,
+  Link,
+  Unlink,
+  BarChart2,
+  CheckCircle2,
+  AlertCircle,
+  XCircle,
+  Settings,
+  PieChart,
+  Sparkles
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { Slider } from '@/components/ui/slider';
+import { Badge } from '@/components/ui/badge';
+import NodeSelector from './NodeSelector';
+
+const NodeDetailsPanel = ({ node, onUpdate, nodes }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [isEditingProgress, setIsEditingProgress] = useState(false);
+  const [isEditingBudget, setIsEditingBudget] = useState(false);
+  const [isEditingStatus, setIsEditingStatus] = useState(false);
+
+  if (!node) return null;
+
+  const getProgressColor = (progress) => {
+    if (progress >= 70) return 'bg-emerald-500';
+    if (progress >= 40) return 'bg-amber-500';
+    return 'bg-rose-500';
+  };
+
+  const getStatusIcon = (status) => {
+    switch (status) {
+      case 'on-track': return <CheckCircle2 className="h-4 w-4 text-emerald-500" />;
+      case 'at-risk': return <AlertCircle className="h-4 w-4 text-amber-500" />;
+      case 'delayed': return <XCircle className="h-4 w-4 text-rose-500" />;
+      default: return <AlertCircle className="h-4 w-4 text-gray-500" />;
+    }
+  };
+
+  const handleProgressChange = (value) => {
+    onUpdate({
+      ...node,
+      progress: Math.round(value[0])
+    });
+  };
+
+  const handleBudgetChange = (value) => {
+    onUpdate({
+      ...node,
+      spent: Math.round(value[0])
+    });
+  };
+
+  const handleStatusChange = (newStatus) => {
+    onUpdate({
+      ...node,
+      status: newStatus
+    });
+    setIsEditingStatus(false);
+  };
+
+  const handleMakeNodeMoon = (parentNode) => {
+    onUpdate({
+      ...node,
+      type: 'moon',
+      parentId: parentNode.id,
+      orbit: 80
+    });
+  };
+
+  const handleUnlinkNode = () => {
+    const maxPlanetOrbit = Math.max(
+      ...nodes.filter(n => n.type === 'planet').map(n => n.orbit || 0),
+      0
+    );
+    
+    onUpdate({
+      ...node,
+      type: 'planet',
+      parentId: 'center',
+      orbit: maxPlanetOrbit + 120
+    });
+  };
+
+  return (
+    <div className="w-full bg-card text-card-foreground rounded-lg shadow-xl">
+      <div className="flex justify-between items-center p-4 border-b border-border">
+        <div className="flex items-center gap-2">
+          <Settings className="h-5 w-5 text-muted-foreground" />
+          <h2 className="text-xl font-semibold">{node.name}</h2>
+        </div>
+        <Badge variant={
+          node.status === 'on-track' ? 'success' :
+          node.status === 'at-risk' ? 'warning' : 'danger'
+        }>
+          <div className="flex items-center gap-1">
+            {getStatusIcon(node.status)}
+            <span className="capitalize">{node.status}</span>
+          </div>
+        </Badge>
+      </div>
+
+      <div className="p-4 space-y-6">
+        {/* Progress Section */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <BarChart2 className="h-4 w-4 text-muted-foreground" />
+              <label className="text-sm font-medium">Progress</label>
+            </div>
+            <button
+              onClick={() => setIsEditingProgress(!isEditingProgress)}
+              className="text-xs text-primary hover:text-primary/90"
+            >
+              {isEditingProgress ? 'Save' : 'Edit'}
+            </button>
+          </div>
+          {isEditingProgress ? (
+            <Slider
+              defaultValue={[node.progress]}
+              max={100}
+              step={1}
+              onValueChange={handleProgressChange}
+              className="w-full"
+            />
+          ) : (
+            <Progress value={node.progress} className={getProgressColor(node.progress)} />
+          )}
+          <span className="text-sm text-muted-foreground">{node.progress}% Complete</span>
+        </div>
+
+        {/* Budget Section */}
+        {(node.budget || node.spent) && (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <PieChart className="h-4 w-4 text-muted-foreground" />
+                <label className="text-sm font-medium">Budget Overview</label>
+              </div>
+              <button
+                onClick={() => setIsEditingBudget(!isEditingBudget)}
+                className="text-xs text-primary hover:text-primary/90"
+              >
+                {isEditingBudget ? 'Save' : 'Edit'}
+              </button>
+            </div>
+            <div className="bg-muted/10 p-3 rounded-lg">
+              <div className="grid grid-cols-2 gap-4 mb-2">
+                <div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                    <DollarSign className="h-4 w-4 text-emerald-500" />
+                    Budget
+                  </div>
+                  <div className="text-lg font-semibold">${(node.budget / 1000).toFixed(0)}k</div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                    <BarChart2 className="h-4 w-4 text-amber-500" />
+                    Spent
+                  </div>
+                  <div className="text-lg font-semibold">${(node.spent / 1000).toFixed(0)}k</div>
+                </div>
+              </div>
+              {isEditingBudget ? (
+                <Slider
+                  defaultValue={[node.spent]}
+                  max={node.budget}
+                  step={1000}
+                  onValueChange={handleBudgetChange}
+                  className="w-full"
+                />
+              ) : (
+                <Progress value={(node.spent / node.budget) * 100} className="h-1.5" />
+              )}
+              <div className="text-xs text-right text-muted-foreground mt-1">
+                {Math.round((node.spent / node.budget) * 100)}% utilized
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Status Section */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Target className="h-4 w-4 text-muted-foreground" />
+              <label className="text-sm font-medium">Status</label>
+            </div>
+            <button
+              onClick={() => setIsEditingStatus(!isEditingStatus)}
+              className="text-xs text-primary hover:text-primary/90"
+            >
+              {isEditingStatus ? 'Cancel' : 'Change'}
+            </button>
+          </div>
+          {isEditingStatus && (
+            <div className="space-y-1">
+              {['on-track', 'at-risk', 'delayed'].map((status) => (
+                <button
+                  key={status}
+                  onClick={() => handleStatusChange(status)}
+                  className={`w-full text-left px-3 py-2 rounded ${
+                    node.status === status ? 'bg-accent' : 'hover:bg-accent'
+                  }`}
+                >
+                  <div className="flex items-center space-x-2">
+                    {getStatusIcon(status)}
+                    <span className="capitalize">{status}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Team Members */}
+        {node.team && node.team.length > 0 && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Users className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">Team Members</span>
+            </div>
+            <div className="grid grid-cols-1 gap-2">
+              {node.team.map((member, index) => (
+                <div key={index} className="flex items-center gap-2 bg-muted/10 p-2 rounded">
+                  <Users className="h-4 w-4 text-blue-400" />
+                  <span className="text-sm">{member}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* KPIs */}
+        {node.kpis && node.kpis.length > 0 && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Target className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">Key Performance Indicators</span>
+            </div>
+            <div className="space-y-3">
+              {node.kpis.map((kpi, index) => (
+                <div key={index} className="space-y-1">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm">{kpi.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Target className="h-4 w-4 text-blue-400" />
+                      <span className="text-sm font-medium">{kpi.target}</span>
+                    </div>
+                  </div>
+                  <Progress
+                    value={(parseFloat(kpi.current) / parseFloat(kpi.target.replace('%', ''))) * 100}
+                    className="h-1.5"
+                  />
+                  <div className="text-right text-xs text-muted-foreground">
+                    Current: {kpi.current}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Risks */}
+        {node.risks && node.risks.length > 0 && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">Risk Assessment</span>
+            </div>
+            <div className="space-y-2">
+              {node.risks.map((risk, index) => (
+                <div key={index} className="flex items-center gap-2 bg-muted/10 p-2 rounded">
+                  <AlertTriangle 
+                    className={`h-4 w-4 ${
+                      risk.severity === 'high' ? 'text-rose-500' : 
+                      risk.severity === 'medium' ? 'text-amber-500' : 
+                      'text-blue-500'
+                    }`}
+                  />
+                  <span className="text-sm">{risk.description}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Timeline */}
+        {node.timeline?.milestones && node.timeline.milestones.length > 0 && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">Timeline</span>
+            </div>
+            <div className="space-y-2">
+              {node.timeline.milestones.map((milestone, index) => (
+                <div key={index} className="flex items-center gap-3 bg-muted/10 p-2 rounded">
+                  <Calendar className="h-4 w-4 text-purple-400" />
+                  <div className="flex-1">
+                    <div className="text-sm">{milestone.description}</div>
+                    <div className="text-xs text-muted-foreground">{milestone.date}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Node Type Section */}
+        {node.type !== 'sun' && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Link className="h-4 w-4 text-muted-foreground" />
+              <label className="text-sm font-medium">Orbital Configuration</label>
+            </div>
+            <NodeSelector
+              nodes={nodes}
+              currentNode={node}
+              onSelect={handleMakeNodeMoon}
+              onUnlink={handleUnlinkNode}
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default NodeDetailsPanel;
+
+// File: src/components/NodeSelector.jsx
+import React, { useState } from 'react';
+import { Check, ChevronsUpDown, Link, Unlink } from 'lucide-react';
+import { cn } from '../lib/utils';
+
+const NodeSelector = ({ nodes, currentNode, onSelect, onUnlink }) => {
+  const [open, setOpen] = useState(false);
+
+  // Filter out nodes that can become moons of the current node (if it's a planet)
+  const availableMoons = nodes.filter(node => 
+    // Only planets can be converted to moons
+    node.type === 'planet' && 
+    // Can't select self
+    node.id !== currentNode.id &&
+    // Can't select ancestors to prevent cycles
+    !isAncestorOf(nodes, node.id, currentNode.id)
+  );
+
+  // Helper function to check if nodeA is an ancestor of nodeB
+  function isAncestorOf(nodes, nodeAId, nodeBId) {
+    let current = nodes.find(n => n.id === nodeBId);
+    while (current && current.parentId) {
+      if (current.parentId === nodeAId) return true;
+      current = nodes.find(n => n.id === current.parentId);
+    }
+    return false;
+  }
+
+  const handleMakeMoon = (selectedNode) => {
+    // Convert the selected node into a moon of the current node
+    onSelect({
+      ...selectedNode,
+      type: 'moon',
+      parentId: currentNode.id
+    });
+  };
+
+  return (
+    <div className="space-y-2">
+      {currentNode.type === 'moon' ? (
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm">
+            <Link className="h-4 w-4 text-muted-foreground" />
+            <span>Orbiting: {nodes.find(n => n.id === currentNode.parentId)?.name}</span>
+          </div>
+          <button
+            onClick={onUnlink}
+            className="flex items-center gap-1 text-xs text-primary hover:text-primary/90"
+          >
+            <Unlink className="h-3 w-3" />
+            <span>Make Planet</span>
+          </button>
+        </div>
+      ) : (
+        <div className="relative">
+          <button
+            onClick={() => setOpen(!open)}
+            className={cn(
+              "w-full flex items-center justify-between px-3 py-2 text-sm",
+              "bg-muted/10 hover:bg-muted/20 rounded-md transition-colors",
+              "border border-border/50"
+            )}
+          >
+            <span>Add Moon...</span>
+            <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
+          </button>
+
+          {open && (
+            <div className="absolute z-50 w-full mt-1 bg-popover border border-border rounded-md shadow-md">
+              <div className="p-1">
+                {availableMoons.length === 0 ? (
+                  <div className="px-2 py-1.5 text-sm text-muted-foreground">
+                    No available nodes to make moons
+                  </div>
+                ) : (
+                  availableMoons.map((node) => (
+                    <button
+                      key={node.id}
+                      className={cn(
+                        "w-full flex items-center px-2 py-1.5 text-sm rounded-sm",
+                        "hover:bg-accent hover:text-accent-foreground",
+                        "focus:bg-accent focus:text-accent-foreground outline-none"
+                      )}
+                      onClick={() => {
+                        handleMakeMoon(node);
+                        setOpen(false);
+                      }}
+                    >
+                      {node.name}
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NodeSelector;
+
+// File: src/components/NotionEditor.jsx
+import React, { useState } from 'react';
+import { Plus, Calendar, Users, DollarSign, Target, AlertTriangle, X } from 'lucide-react';
+
+const BlockMenu = ({ onSelect, onClose, position }) => {
+  const blocks = [
+    { id: 'text', label: 'Text block', icon: 'T' },
+    { id: 'kpi', label: 'KPI', icon: <Target size={14} /> },
+    { id: 'milestone', label: 'Milestone', icon: <Calendar size={14} /> },
+    { id: 'team', label: 'Team member', icon: <Users size={14} /> },
+    { id: 'risk', label: 'Risk', icon: <AlertTriangle size={14} /> },
+    { id: 'budget', label: 'Budget item', icon: <DollarSign size={14} /> }
+  ];
+
+  return (
+    <div 
+      className="fixed bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl border border-gray-700 py-1 z-[60]"
+      style={{ 
+        top: Math.min(position.y, window.innerHeight - 300),
+        left: Math.min(position.x, window.innerWidth - 200)
+      }}
+    >
+      {blocks.map(block => (
+        <button
+          key={block.id}
+          className="w-full px-4 py-2 flex items-center space-x-3 hover:bg-gray-700/80 text-left"
+          onClick={() => {
+            onSelect(block.id);
+            onClose();
+          }}
+        >
+          <span className="w-5 h-5 flex items-center justify-center text-gray-400">
+            {typeof block.icon === 'string' ? block.icon : block.icon}
+          </span>
+          <span className="text-sm text-gray-200">{block.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const EditableBlock = ({ block, onChange, onDelete }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [localContent, setLocalContent] = useState(block.content || '');
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      setIsEditing(false);
+      onChange({ ...block, content: localContent });
+    }
+  };
+
+  const renderBlockContent = () => {
+    switch (block.type) {
+      case 'text':
+        return isEditing ? (
+          <textarea
+            className="w-full bg-gray-700/80 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={localContent}
+            onChange={(e) => setLocalContent(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onBlur={() => {
+              setIsEditing(false);
+              onChange({ ...block, content: localContent });
+            }}
+            autoFocus
+          />
+        ) : (
+          <div 
+            className="text-gray-300 cursor-text"
+            onClick={() => setIsEditing(true)}
+          >
+            {localContent || 'Click to add text...'}
+          </div>
+        );
+
+      case 'kpi':
+        return (
+          <div className="flex items-center space-x-4 bg-gray-700/80 p-3 rounded">
+            <Target size={16} className="text-blue-400" />
+            <div className="flex-1">
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 focus:outline-none focus:border-blue-500"
+                placeholder="KPI name"
+                value={block.name || ''}
+                onChange={(e) => onChange({ ...block, name: e.target.value })}
+              />
+              <div className="flex items-center space-x-4 mt-2">
+                <input
+                  type="text"
+                  className="w-24 bg-gray-600/80 rounded px-2 py-1"
+                  placeholder="Target"
+                  value={block.target || ''}
+                  onChange={(e) => onChange({ ...block, target: e.target.value })}
+                />
+                <input
+                  type="text"
+                  className="w-24 bg-gray-600/80 rounded px-2 py-1"
+                  placeholder="Current"
+                  value={block.current || ''}
+                  onChange={(e) => onChange({ ...block, current: e.target.value })}
+                />
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'milestone':
+        return (
+          <div className="flex items-center space-x-4 bg-gray-700/80 p-3 rounded">
+            <Calendar size={16} className="text-purple-400" />
+            <div className="flex-1">
+              <input
+                type="date"
+                className="bg-gray-600/80 rounded px-2 py-1"
+                value={block.date || ''}
+                onChange={(e) => onChange({ ...block, date: e.target.value })}
+              />
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 mt-2 focus:outline-none focus:border-purple-500"
+                placeholder="Milestone description"
+                value={block.description || ''}
+                onChange={(e) => onChange({ ...block, description: e.target.value })}
+              />
+            </div>
+          </div>
+        );
+
+      case 'team':
+        return (
+          <div className="flex items-center space-x-4 bg-gray-700/80 p-3 rounded">
+            <Users size={16} className="text-blue-400" />
+            <input
+              type="text"
+              className="flex-1 bg-transparent border-b border-gray-600 focus:outline-none focus:border-blue-500"
+              placeholder="Team member name"
+              value={block.content || ''}
+              onChange={(e) => onChange({ ...block, content: e.target.value })}
+            />
+          </div>
+        );
+
+      case 'risk':
+        return (
+          <div className="flex items-center space-x-4 bg-gray-700/80 p-3 rounded">
+            <AlertTriangle size={16} className="text-yellow-500" />
+            <div className="flex-1">
+              <select
+                className="bg-gray-600/80 rounded px-2 py-1 mb-2"
+                value={block.severity || 'medium'}
+                onChange={(e) => onChange({ ...block, severity: e.target.value })}
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 focus:outline-none focus:border-yellow-500"
+                placeholder="Risk description"
+                value={block.description || ''}
+                onChange={(e) => onChange({ ...block, description: e.target.value })}
+              />
+            </div>
+          </div>
+        );
+
+      case 'budget':
+        return (
+          <div className="flex items-center space-x-4 bg-gray-700/80 p-3 rounded">
+            <DollarSign size={16} className="text-green-500" />
+            <div className="flex-1">
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 focus:outline-none focus:border-green-500"
+                placeholder="Budget item name"
+                value={block.name || ''}
+                onChange={(e) => onChange({ ...block, name: e.target.value })}
+              />
+              <div className="flex items-center space-x-4 mt-2">
+                <input
+                  type="number"
+                  className="w-32 bg-gray-600/80 rounded px-2 py-1"
+                  placeholder="Amount"
+                  value={block.amount || ''}
+                  onChange={(e) => onChange({ ...block, amount: e.target.value })}
+                />
+                <select
+                  className="bg-gray-600/80 rounded px-2 py-1"
+                  value={block.type || 'budget'}
+                  onChange={(e) => onChange({ ...block, type: e.target.value })}
+                >
+                  <option value="budget">Budget</option>
+                  <option value="spent">Spent</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="group relative">
+      <div className="absolute -left-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button 
+          className="p-1 text-gray-400 hover:text-white"
+          onClick={() => onDelete(block.id)}
+        >
+          <X size={14} />
+        </button>
+      </div>
+      {renderBlockContent()}
+    </div>
+  );
+};
+
+const NotionEditor = ({ node, onSave, onClose }) => {
+  const [blocks, setBlocks] = useState(node?.blocks || []);
+  const [showBlockMenu, setShowBlockMenu] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
+
+  const handleAddBlock = (type) => {
+    const newBlock = {
+      id: `block-${Date.now()}`,
+      type,
+      content: '',
+      name: '',
+      target: '',
+      current: '',
+      date: '',
+      description: ''
+    };
+    setBlocks([...blocks, newBlock]);
+  };
+
+  const handleBlockChange = (updatedBlock) => {
+    setBlocks(blocks.map(block => 
+      block.id === updatedBlock.id ? updatedBlock : block
+    ));
+  };
+
+  const handleBlockDelete = (blockId) => {
+    setBlocks(blocks.filter(block => block.id !== blockId));
+  };
+
+  const handleSave = () => {
+    // Process blocks based on their type
+    const processedNode = { ...node };
+
+    // Initialize arrays if they don't exist
+    processedNode.team = processedNode.team || [];
+    processedNode.kpis = processedNode.kpis || [];
+    processedNode.risks = processedNode.risks || [];
+    processedNode.timeline = processedNode.timeline || { milestones: [] };
+
+    blocks.forEach(block => {
+      switch (block.type) {
+        case 'team':
+          if (block.content) {
+            processedNode.team.push(block.content);
+          }
+          break;
+        case 'kpi':
+          if (block.name && block.target && block.current) {
+            processedNode.kpis.push({
+              name: block.name,
+              target: block.target,
+              current: block.current
+            });
+          }
+          break;
+        case 'risk':
+          if (block.description) {
+            processedNode.risks.push({
+              severity: block.severity || 'medium',
+              description: block.description
+            });
+          }
+          break;
+        case 'milestone':
+          if (block.date && block.description) {
+            processedNode.timeline.milestones.push({
+              date: block.date,
+              description: block.description
+            });
+          }
+          break;
+        case 'budget':
+          if (block.name && block.amount) {
+            if (block.type === 'budget') {
+              processedNode.budget = parseInt(block.amount, 10);
+            } else {
+              processedNode.spent = parseInt(block.amount, 10);
+            }
+          }
+          break;
+      }
+    });
+
+    onSave?.(processedNode);
+    onClose?.();
+  };
+
+  return (
+    <div className="fixed inset-0 bg-gray-900/30 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+        {/* Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-700/50">
+          <h2 className="text-xl font-semibold text-white">{node?.name || 'Untitled Node'}</h2>
+          <button 
+            className="p-2 hover:bg-gray-700/50 rounded text-gray-400 hover:text-white"
+            onClick={() => onClose?.()}
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+          {blocks.map(block => (
+            <EditableBlock
+              key={block.id}
+              block={block}
+              onChange={handleBlockChange}
+              onDelete={handleBlockDelete}
+            />
+          ))}
+
+          {/* Add block button */}
+          <button
+            className="flex items-center space-x-2 text-gray-400 hover:text-white"
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              setMenuPosition({ 
+                x: rect.left,
+                y: rect.top + window.scrollY + 40
+              });
+              setShowBlockMenu(true);
+            }}
+          >
+            <Plus size={16} />
+            <span>Add a block</span>
+          </button>
+        </div>
+
+        {/* Footer */}
+        <div className="p-4 border-t border-gray-700/50 flex justify-end">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            onClick={handleSave}
+          >
+            Save changes
+          </button>
+        </div>
+      </div>
+
+      {showBlockMenu && (
+        <BlockMenu
+          position={menuPosition}
+          onSelect={handleAddBlock}
+          onClose={() => setShowBlockMenu(false)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default NotionEditor;
+
+// File: src/components/OrbitalNode.jsx
+import React, { useState } from 'react';
+
+const categories = {
+  strategy: { color: '#36B37E', name: 'Strategy' },
+  operations: { color: '#6554C0', name: 'Operations' },
+  technology: { color: '#FF8B00', name: 'Technology' },
+  hr: { color: '#FF5630', name: 'HR' }
+};
+
+const OrbitalNode = ({ node, position, onSelect, scale }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const getNodeColor = () => {
+    if (node.type === 'sun') return '#FFB900';
+    return categories[node.category]?.color || '#36B37E';
+  };
+
+  const getNodeSize = () => {
+    const baseSize = (() => {
+      switch (node.type) {
+        case 'sun': return 30;
+        case 'planet': return 20;
+        case 'moon': return 12;
+        default: return 15;
+      }
+    })();
+    return baseSize * scale;
+  };
+
+  const effectScale = isHovered ? 1.15 : 1;
+
+  return (
+    <g
+      transform={`translate(${position.x},${position.y})`}
+      onClick={() => onSelect(node)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ cursor: 'pointer' }}
+    >
+      {/* Hover effect */}
+      <circle
+        r={getNodeSize() * 1.4}
+        fill={getNodeColor()}
+        opacity={isHovered ? 0.15 : 0}
+        style={{ transition: 'all 0.3s ease' }}
+      />
+      
+      {/* Main node circle */}
+      <circle
+        r={getNodeSize()}
+        fill={getNodeColor()}
+        stroke="white"
+        strokeWidth={2 * scale}
+        style={{ 
+          filter: isHovered ? 'brightness(1.2)' : 'none',
+          transition: 'all 0.3s ease'
+        }}
+      />
+
+      {/* Progress ring */}
+      <circle
+        r={getNodeSize()}
+        fill="none"
+        stroke="rgba(255, 255, 255, 0.3)"
+        strokeWidth={3 * scale}
+        strokeDasharray={`${2 * Math.PI * getNodeSize() * (node.progress / 100)} ${2 * Math.PI * getNodeSize()}`}
+        transform={`rotate(-90)`}
+      />
+
+      {/* Node label */}
+      <text
+        y={getNodeSize() + 15 * scale}
+        textAnchor="middle"
+        fill="white"
+        fontSize={12 * scale}
+        style={{ 
+          fontWeight: isHovered ? 'bold' : 'normal',
+          pointerEvents: 'none',
+          userSelect: 'none'
+        }}
+      >
+        {node.name}
+      </text>
+
+      {/* Category label */}
+      {node.category && (
+        <text
+          y={getNodeSize() + 30 * scale}
+          textAnchor="middle"
+          fill="#9CA3AF"
+          fontSize={10 * scale}
+          style={{ 
+            pointerEvents: 'none',
+            userSelect: 'none'
+          }}
+        >
+          {categories[node.category]?.name}
+        </text>
+      )}
+
+      {/* Status indicator */}
+      <circle
+        cx={getNodeSize() * 0.7}
+        cy={-getNodeSize() * 0.7}
+        r={4 * scale}
+        fill={node.status === 'on-track' ? '#10B981' : node.status === 'at-risk' ? '#F59E0B' : '#EF4444'}
+        style={{ filter: 'drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))' }}
+      />
+    </g>
+  );
+};
+
+export default OrbitalNode;
+
+// File: src/components/ui/badge.jsx
+import * as React from "react"
+import { cva } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        outline: "text-foreground",
+        success: "border-transparent bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20",
+        warning: "border-transparent bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
+        danger: "border-transparent bg-rose-500/10 text-rose-500 hover:bg-rose-500/20",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+function Badge({ className, variant, ...props }) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  )
+}
+
+export { Badge, badgeVariants }
+
+// File: src/components/ui/button.jsx
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        lg: "h-10 rounded-md px-8",
+        icon: "h-9 w-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+const Button = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : "button"
+  return (
+    <Comp
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    />
+  )
+})
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+
+// File: src/components/ui/calendar.jsx
+import * as React from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { DayPicker } from "react-day-picker"
+
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+
+function Calendar({
+  className,
+  classNames,
+  showOutsideDays = true,
+  ...props
+}) {
+  return (
+    <DayPicker
+      showOutsideDays={showOutsideDays}
+      className={cn("p-3", className)}
+      classNames={{
+        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+        month: "space-y-4",
+        caption: "flex justify-center pt-1 relative items-center",
+        caption_label: "text-sm font-medium",
+        nav: "space-x-1 flex items-center",
+        nav_button: cn(
+          buttonVariants({ variant: "outline" }),
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        ),
+        nav_button_previous: "absolute left-1",
+        nav_button_next: "absolute right-1",
+        table: "w-full border-collapse space-y-1",
+        head_row: "flex",
+        head_cell:
+          "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
+        row: "flex w-full mt-2",
+        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        day: cn(
+          buttonVariants({ variant: "ghost" }),
+          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+        ),
+        day_range_end: "day-range-end",
+        day_selected:
+          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+        day_today: "bg-accent text-accent-foreground",
+        day_outside:
+          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
+        day_disabled: "text-muted-foreground opacity-50",
+        day_range_middle:
+          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+        day_hidden: "invisible",
+        ...classNames,
+      }}
+      components={{
+        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
+        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
+      }}
+      {...props}
+    />
+  )
+}
+Calendar.displayName = "Calendar"
+
+export { Calendar }
+
+// File: src/components/ui/card.jsx
+import * as React from "react"
+import { cn } from "@/lib/utils"
+
+const Card = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)}
+    {...props}
+  />
+))
+Card.displayName = "Card"
+
+const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
+// File: src/components/ui/command.jsx
+import * as React from "react"
+import { Command as CommandPrimitive } from "cmdk"
+import { Search } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+
+const Command = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive
+    ref={ref}
+    className={cn(
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      className
+    )}
+    {...props} />
+))
+Command.displayName = CommandPrimitive.displayName
+
+const CommandDialog = ({
+  children,
+  ...props
+}) => {
+  return (
+    <Dialog {...props}>
+      <DialogContent className="overflow-hidden p-0 shadow-lg">
+        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+          {children}
+        </Command>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+const CommandInput = React.forwardRef(({ className, ...props }, ref) => (
+  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <CommandPrimitive.Input
+      ref={ref}
+      className={cn(
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      )}
+      {...props} />
+  </div>
+))
+CommandInput.displayName = CommandPrimitive.Input.displayName
+
+const CommandList = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.List
+    ref={ref}
+    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
+    {...props} />
+))
+CommandList.displayName = CommandPrimitive.List.displayName
+
+const CommandEmpty = React.forwardRef((props, ref) => (
+  <CommandPrimitive.Empty ref={ref} className="py-6 text-center text-sm" {...props} />
+))
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+
+const CommandGroup = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Group
+    ref={ref}
+    className={cn(
+      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      className
+    )}
+    {...props} />
+))
+CommandGroup.displayName = CommandPrimitive.Group.displayName
+
+const CommandSeparator = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Separator ref={ref} className={cn("-mx-1 h-px bg-border", className)} {...props} />
+))
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+
+const CommandItem = React.forwardRef(({ className, ...props }, ref) => (
+  <CommandPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props} />
+))
+CommandItem.displayName = CommandPrimitive.Item.displayName
+
+export {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandSeparator,
+}
+
+// File: src/components/ui/dialog.jsx
+import * as React from "react"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { Cross2Icon } from "@radix-ui/react-icons"
+
+import { cn } from "@/lib/utils"
+
+const Dialog = DialogPrimitive.Root
+
+const DialogTrigger = DialogPrimitive.Trigger
+
+const DialogPortal = DialogPrimitive.Portal
+
+const DialogClose = DialogPrimitive.Close
+
+const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
+  <DialogPrimitive.Overlay
+    ref={ref}
+    className={cn(
+      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className
+    )}
+    {...props} />
+))
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
+
+const DialogContent = React.forwardRef(({ className, children, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      className={cn(
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
+        className
+      )}
+      {...props}>
+      {children}
+      <DialogPrimitive.Close
+        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+        <Cross2Icon className="h-4 w-4" />
+        <span className="sr-only">Close</span>
+      </DialogPrimitive.Close>
+    </DialogPrimitive.Content>
+  </DialogPortal>
+))
+DialogContent.displayName = DialogPrimitive.Content.displayName
+
+const DialogHeader = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
+    {...props} />
+)
+DialogHeader.displayName = "DialogHeader"
+
+const DialogFooter = ({
+  className,
+  ...props
+}) => (
+  <div
+    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+    {...props} />
+)
+DialogFooter.displayName = "DialogFooter"
+
+const DialogTitle = React.forwardRef(({ className, ...props }, ref) => (
+  <DialogPrimitive.Title
+    ref={ref}
+    className={cn("text-lg font-semibold leading-none tracking-tight", className)}
+    {...props} />
+))
+DialogTitle.displayName = DialogPrimitive.Title.displayName
+
+const DialogDescription = React.forwardRef(({ className, ...props }, ref) => (
+  <DialogPrimitive.Description
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props} />
+))
+DialogDescription.displayName = DialogPrimitive.Description.displayName
+
+export {
+  Dialog,
+  DialogPortal,
+  DialogOverlay,
+  DialogTrigger,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+}
+
+// File: src/components/ui/index.js
+export * from './button';
+export * from './card';
+export * from './dialog';
+export * from './input';
+export * from './label';
+export * from './select';
+export * from './slider';
+export * from './progress';
+export * from './badge';
+export * from './calendar';
+export * from './tooltip';
+
+// File: src/components/ui/input.jsx
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Input = React.forwardRef(({ className, type, ...props }, ref) => {
+  return (
+    <input
+      type={type}
+      className={cn(
+        "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      )}
+      ref={ref}
+      {...props}
+    />
+  )
+})
+Input.displayName = "Input"
+
+export { Input }
+
+// File: src/components/ui/label.jsx
+import * as React from "react"
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cva } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+)
+
+const Label = React.forwardRef(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root ref={ref} className={cn(labelVariants(), className)} {...props} />
+))
+Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
+
+// File: src/components/ui/popover.jsx
+import * as React from "react"
+import * as PopoverPrimitive from "@radix-ui/react-popover"
+
+import { cn } from "@/lib/utils"
+
+const Popover = PopoverPrimitive.Root
+
+const PopoverTrigger = PopoverPrimitive.Trigger
+
+const PopoverContent = React.forwardRef(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
+  <PopoverPrimitive.Portal>
+    <PopoverPrimitive.Content
+      ref={ref}
+      align={align}
+      sideOffset={sideOffset}
+      className={cn(
+        "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        className
+      )}
+      {...props} />
+  </PopoverPrimitive.Portal>
+))
+PopoverContent.displayName = PopoverPrimitive.Content.displayName
+
+export { Popover, PopoverTrigger, PopoverContent }
+
+// File: src/components/ui/progress.jsx
+import * as React from "react"
+import * as ProgressPrimitive from "@radix-ui/react-progress"
+import { cn } from "@/lib/utils"
+
+const Progress = React.forwardRef(({ className, value, ...props }, ref) => (
+  <ProgressPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
+      className
+    )}
+    {...props}>
+    <ProgressPrimitive.Indicator
+      className="h-full w-full flex-1 bg-primary transition-all"
+      style={{ transform: `translateX(-${100 - (value || 0)}%)` }} />
+  </ProgressPrimitive.Root>
+))
+Progress.displayName = ProgressPrimitive.Root.displayName
+
+export { Progress }
+
+// File: src/components/ui/select.jsx
+import * as React from "react"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { Check, ChevronDown, ChevronUp } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const Select = SelectPrimitive.Root
+const SelectGroup = SelectPrimitive.Group
+const SelectValue = SelectPrimitive.Value
+
+const SelectTrigger = React.forwardRef(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+      className
+    )}
+    {...props}>
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <ChevronDown className="h-4 w-4 opacity-50" />
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+))
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+
+const SelectContent = React.forwardRef(({ className, children, position = "popper", ...props }, ref) => (
+  <SelectPrimitive.Portal>
+    <SelectPrimitive.Content
+      ref={ref}
+      className={cn(
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        position === "popper" &&
+          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+        className
+      )}
+      position={position}
+      {...props}>
+      <SelectPrimitive.Viewport
+        className={cn("p-1", position === "popper" &&
+          "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]")}>
+        {children}
+      </SelectPrimitive.Viewport>
+    </SelectPrimitive.Content>
+  </SelectPrimitive.Portal>
+))
+SelectContent.displayName = SelectPrimitive.Content.displayName
+
+const SelectItem = React.forwardRef(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}>
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </SelectPrimitive.ItemIndicator>
+    </span>
+    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+  </SelectPrimitive.Item>
+))
+SelectItem.displayName = SelectPrimitive.Item.displayName
+
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+}
+
+// File: src/components/ui/slider.jsx
+import * as React from "react"
+import * as SliderPrimitive from "@radix-ui/react-slider"
+import { cn } from "@/lib/utils"
+
+const Slider = React.forwardRef(({ className, ...props }, ref) => (
+  <SliderPrimitive.Root
+    ref={ref}
+    className={cn("relative flex w-full touch-none select-none items-center", className)}
+    {...props}>
+    <SliderPrimitive.Track
+      className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20">
+      <SliderPrimitive.Range className="absolute h-full bg-primary" />
+    </SliderPrimitive.Track>
+    <SliderPrimitive.Thumb
+      className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+  </SliderPrimitive.Root>
+))
+Slider.displayName = SliderPrimitive.Root.displayName
+
+export { Slider }
+
+// File: src/components/ui/tabs.jsx
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+import { cn } from "@/lib/utils"
+
+const Tabs = TabsPrimitive.Root
+
+const TabsList = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+      className
+    )}
+    {...props} />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+      className
+    )}
+    {...props} />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
+    {...props} />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
+
+// File: src/components/ui/tooltip.jsx
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+
+import { cn } from "@/lib/utils"
+
+const TooltipProvider = TooltipPrimitive.Provider
+
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Content
+    ref={ref}
+    sideOffset={sideOffset}
+    className={cn(
+      "z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className
+    )}
+    {...props} />
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+
+// File: src/data/initialNodes.js
+export const initialNodes = [
+  { 
+    id: 'center',
+    name: 'Main Organization',
+    type: 'sun',
+    category: 'strategy',
+    status: 'active',
+    description: 'Central organization hub',
+    budget: 5000000,
+    spent: 2100000,
+    team: ['John D. (CEO)', 'Sarah M. (COO)', 'Mike R. (CTO)'],
+    kpis: [
+      { name: 'Revenue Growth', target: '25%', current: '18%' },
+      { name: 'Digital Adoption', target: '80%', current: '65%' },
+      { name: 'Customer Satisfaction', target: '95%', current: '92%' }
+    ],
+    risks: [
+      { severity: 'high', description: 'Market volatility impact' },
+      { severity: 'medium', description: 'Resource constraints' }
+    ],
+    timeline: {
+      start: '2024-01-01',
+      end: '2024-12-31',
+      milestones: [
+        { date: '2024-03-31', description: 'Q1 Digital Strategy Review' },
+        { date: '2024-06-30', description: 'Mid-year Transformation Assessment' }
+      ]
+    },
+    progress: 65
+  },
+  { 
+    id: 'digital-transform',
+    name: 'Digital Transformation',
+    type: 'planet',
+    parentId: 'center',
+    category: 'technology',
+    status: 'on-track',
+    description: 'Enterprise-wide digital transformation initiative',
+    budget: 2000000,
+    spent: 800000,
+    team: ['Alex T. (Digital Director)', 'Maria S. (Change Manager)'],
+    kpis: [
+      { name: 'Process Automation', target: '70%', current: '45%' },
+      { name: 'Employee Digital Skills', target: '90%', current: '75%' }
+    ],
+    risks: [
+      { severity: 'medium', description: 'Technical debt accumulation' },
+      { severity: 'medium', description: 'Change resistance' }
+    ],
+    progress: 45
+  },
+  {
+    id: 'cloud-migration',
+    name: 'Cloud Migration',
+    type: 'moon',
+    parentId: 'digital-transform',
+    category: 'technology',
+    status: 'at-risk',
+    description: 'Migration of legacy systems to cloud infrastructure',
+    budget: 800000,
+    spent: 400000,
+    team: ['David L. (Cloud Architect)', 'Nina P. (DevOps Lead)'],
+    kpis: [
+      { name: 'Systems Migrated', target: '100%', current: '40%' },
+      { name: 'Downtime Reduction', target: '99.9%', current: '98.5%' }
+    ],
+    progress: 40
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data Analytics Platform',
+    type: 'moon',
+    parentId: 'digital-transform',
+    category: 'technology',
+    status: 'on-track',
+    description: 'Implementation of enterprise data analytics',
+    budget: 600000,
+    spent: 250000,
+    team: ['Rachel K. (Data Science)', 'Tom M. (BI Lead)'],
+    kpis: [
+      { name: 'Data Integration', target: '90%', current: '65%' },
+      { name: 'User Adoption', target: '75%', current: '60%' }
+    ],
+    progress: 55
+  },
+  {
+    id: 'digital-workplace',
+    name: 'Digital Workplace',
+    type: 'planet',
+    parentId: 'center',
+    category: 'operations',
+    status: 'on-track',
+    description: 'Modern workplace and collaboration tools',
+    budget: 500000,
+    spent: 200000,
+    team: ['Patricia H. (IT)', 'James R. (Training)'],
+    kpis: [
+      { name: 'Tool Adoption', target: '95%', current: '82%' },
+      { name: 'Productivity Gain', target: '30%', current: '25%' }
+    ],
+    progress: 70
+  },
+  {
+    id: 'customer-experience',
+    name: 'Customer Experience',
+    type: 'planet',
+    parentId: 'center',
+    category: 'strategy',
+    status: 'on-track',
+    description: 'Digital customer experience enhancement',
+    budget: 1000000,
+    spent: 400000,
+    team: ['Lisa M. (CX Lead)', 'Chris P. (UX Director)'],
+    kpis: [
+      { name: 'Customer Satisfaction', target: '90%', current: '85%' },
+      { name: 'Digital Engagement', target: '75%', current: '60%' }
+    ],
+    progress: 65
+  }
+];
+
+// File: src/hooks/useDrag.js
+import { useCallback } from 'react';
+
+export const useDrag = ({ onDragStart, onDrag, onDragEnd }) => {
+  const getEventCoordinates = (e) => {
+    if (e?.touches) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+    return { x: e.clientX, y: e.clientY };
+  };
+
+  const dragStart = useCallback((e) => {
+    e.stopPropagation();
+    const startCoords = getEventCoordinates(e);
+    onDragStart?.(startCoords);
+
+    const handleMove = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const coords = getEventCoordinates(e);
+      onDrag?.(coords);
+    };
+
+    const handleEnd = (e) => {
+      e.stopPropagation();
+      const coords = getEventCoordinates(e);
+      onDragEnd?.(coords);
+      cleanup();
+    };
+
+    const cleanup = () => {
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mouseup', handleEnd);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchend', handleEnd);
+    };
+
+    window.addEventListener('mousemove', handleMove, { passive: false });
+    window.addEventListener('mouseup', handleEnd);
+    window.addEventListener('touchmove', handleMove, { passive: false });
+    window.addEventListener('touchend', handleEnd);
+
+    return cleanup;
+  }, [onDragStart, onDrag, onDragEnd]);
+
+  return { dragStart };
+};
+
+// File: src/hooks/useOrbitalAnimation.js
+import { useState, useEffect, useRef } from 'react';
+
+export const useOrbitalAnimation = (initialScale = 1) => {
+  const [scale, setScale] = useState(initialScale);
+  const [time, setTime] = useState(0);
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    const animate = () => {
+      setTime(prev => prev + 0.0003); // Slower animation speed (was 0.001)
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
+  const calculateNodePosition = (node, allNodes, center) => {
+    if (node.type === 'sun') {
+      return center;
+    }
+
+    // Increased base distances and increments
+    const orbitDistances = {
+      planet: {
+        base: 180, // Was 120
+        increment: 100 // Was 60
+      },
+      moon: {
+        base: 60, // Was 30
+        increment: 30 // Was 20
+      }
+    };
+
+    // For planets, orbit around the sun
+    if (node.type === 'planet') {
+      const planetIndex = allNodes
+        .filter(n => n.type === 'planet')
+        .findIndex(n => n.id === node.id);
+      
+      const orbitRadius = orbitDistances.planet.base + (planetIndex * orbitDistances.planet.increment);
+      // Add offset to initial position based on index for better distribution
+      const angleOffset = (planetIndex * (Math.PI * 2 / allNodes.filter(n => n.type === 'planet').length));
+      const angle = time + angleOffset;
+
+      return {
+        x: center.x + (Math.cos(angle) * orbitRadius * scale),
+        y: center.y + (Math.sin(angle) * orbitRadius * scale)
+      };
+    }
+
+    // For moons, orbit around their parent planet in opposite direction
+    if (node.type === 'moon' && node.parentId) {
+      const parent = allNodes.find(n => n.id === node.parentId);
+      if (!parent) return center;
+
+      const parentPos = calculateNodePosition(parent, allNodes, center);
+      const moonIndex = allNodes
+        .filter(n => n.type === 'moon' && n.parentId === parent.id)
+        .findIndex(n => n.id === node.id);
+
+      const orbitRadius = orbitDistances.moon.base + (moonIndex * orbitDistances.moon.increment);
+      // Add offset to initial position for moons
+      const angleOffset = (moonIndex * (Math.PI * 2 / allNodes.filter(n => n.type === 'moon' && n.parentId === parent.id).length));
+      const angle = -time * 1.5 + angleOffset; // Slightly slower moon rotation (was 2)
+
+      return {
+        x: parentPos.x + (Math.cos(angle) * orbitRadius * scale),
+        y: parentPos.y + (Math.sin(angle) * orbitRadius * scale)
+      };
+    }
+
+    return center;
+  };
+
+  return {
+    scale,
+    setScale,
+    calculateNodePosition,
+    time
+  };
+};
+
+// File: src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+// File: src/lib/utils.js
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
+// File: src/main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import './styles/globals.css';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// File: src/styles/globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full hover:bg-muted/80 transition-colors;
+}
+
+/* Smooth transitions */
+.transition-all {
+  @apply duration-200 ease-in-out;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all hover:shadow-lg hover:border-primary/20;
+}
+
+/* Glass morphism */
+.glass {
+  @apply bg-background/80 backdrop-blur-lg border border-border/50;
+}
+
+// File: tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', 'Inter', 'sans-serif'],
+        display: ['Cal Sans', 'Inter var', 'sans-serif'],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "glow": {
+          "0%, 100%": { opacity: 0.9 },
+          "50%": { opacity: 0.5 }
+        }
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "glow": "glow 2s ease-in-out infinite"
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+
+// File: version-cli.js
+import VersionManager from './version-manager.js';
+import readline from 'readline';
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const manager = new VersionManager();
+
+const question = (query) => new Promise((resolve) => rl.question(query, resolve));
+
+async function main() {
+  while (true) {
+    console.log('\nVersion Management System');
+    console.log('1. Create new version');
+    console.log('2. List versions');
+    console.log('3. Restore version');
+    console.log('4. Exit');
+
+    const choice = await question('\nSelect an option (1-4): ');
+
+    switch (choice) {
+      case '1': {
+        const name = await question('Enter version name: ');
+        const description = await question('Enter version description (optional): ');
+        await manager.createSnapshot(name, description);
+        break;
+      }
+      case '2': {
+        const versions = manager.listVersions();
+        console.log('\nAvailable versions:');
+        versions.forEach((version, index) => {
+          console.log(`\n${index + 1}. ${version.name}`);
+          console.log(`   Created: ${version.created}`);
+          console.log(`   Description: ${version.description || 'N/A'}`);
+          console.log(`   Directory: ${version.directory}`);
+        });
+        break;
+      }
+      case '3': {
+        const versions = manager.listVersions();
+        console.log('\nAvailable versions:');
+        versions.forEach((version, index) => {
+          console.log(`${index + 1}. ${version.name} (${version.created})`);
+        });
+        const versionIndex = parseInt(await question('\nSelect version to restore (number): ')) - 1;
+        
+        if (versionIndex >= 0 && versionIndex < versions.length) {
+          const confirm = await question(
+            `Are you sure you want to restore "${versions[versionIndex].name}"? This will overwrite current files (y/N): `
+          );
+          
+          if (confirm.toLowerCase() === 'y') {
+            await manager.restoreVersion(versions[versionIndex].directory);
+          }
+        } else {
+          console.log('Invalid version selected');
+        }
+        break;
+      }
+      case '4': {
+        rl.close();
+        return;
+      }
+      default: {
+        console.log('Invalid option');
+      }
+    }
+  }
+}
+
+main().catch(console.error);
+
+// File: version-manager.js
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+class VersionManager {
+  constructor() {
+    this.versionsDir = path.join(__dirname, 'versions');
+    this.ensureVersionsDirectory();
+  }
+
+  ensureVersionsDirectory() {
+    if (!fs.existsSync(this.versionsDir)) {
+      fs.mkdirSync(this.versionsDir, { recursive: true });
+    }
+  }
+
+  async createSnapshot(name, description = '') {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const versionDir = path.join(this.versionsDir, `${timestamp}_${name}`);
+    
+    // Create version directory
+    fs.mkdirSync(versionDir, { recursive: true });
+
+    // Create metadata file
+    const metadata = {
+      name,
+      description,
+      timestamp,
+      created: new Date().toISOString()
+    };
+    fs.writeFileSync(
+      path.join(versionDir, 'version.json'),
+      JSON.stringify(metadata, null, 2)
+    );
+
+    // Copy source files
+    const srcDir = path.join(__dirname, 'src');
+    await this.copyDirectory(srcDir, path.join(versionDir, 'src'));
+
+    // Copy configuration files
+    const configFiles = [
+      'package.json',
+      'vite.config.js',
+      'tailwind.config.js',
+      'postcss.config.js',
+      'jsconfig.json'
+    ];
+
+    for (const file of configFiles) {
+      if (fs.existsSync(path.join(__dirname, file))) {
+        fs.copyFileSync(
+          path.join(__dirname, file),
+          path.join(versionDir, file)
+        );
+      }
+    }
+
+    console.log(`Created version snapshot: ${name} (${timestamp})`);
+    return versionDir;
+  }
+
+  async copyDirectory(src, dest) {
+    fs.mkdirSync(dest, { recursive: true });
+    const entries = fs.readdirSync(src, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const srcPath = path.join(src, entry.name);
+      const destPath = path.join(dest, entry.name);
+
+      if (entry.isDirectory()) {
+        await this.copyDirectory(srcPath, destPath);
+      } else {
+        fs.copyFileSync(srcPath, destPath);
+      }
+    }
+  }
+
+  listVersions() {
+    if (!fs.existsSync(this.versionsDir)) {
+      return [];
+    }
+
+    return fs.readdirSync(this.versionsDir)
+      .filter(dir => {
+        const versionJsonPath = path.join(this.versionsDir, dir, 'version.json');
+        return fs.existsSync(versionJsonPath);
+      })
+      .map(dir => {
+        const versionJsonPath = path.join(this.versionsDir, dir, 'version.json');
+        const metadata = JSON.parse(fs.readFileSync(versionJsonPath, 'utf8'));
+        return {
+          directory: dir,
+          ...metadata
+        };
+      })
+      .sort((a, b) => new Date(b.created) - new Date(a.created));
+  }
+
+  async restoreVersion(versionDir) {
+    const srcVersionDir = path.join(this.versionsDir, versionDir);
+    
+    if (!fs.existsSync(srcVersionDir)) {
+      throw new Error(`Version ${versionDir} not found`);
+    }
+
+    // Restore source files
+    await this.copyDirectory(
+      path.join(srcVersionDir, 'src'),
+      path.join(__dirname, 'src')
+    );
+
+    // Restore configuration files
+    const configFiles = [
+      'package.json',
+      'vite.config.js',
+      'tailwind.config.js',
+      'postcss.config.js',
+      'jsconfig.json'
+    ];
+
+    for (const file of configFiles) {
+      const srcFile = path.join(srcVersionDir, file);
+      if (fs.existsSync(srcFile)) {
+        fs.copyFileSync(srcFile, path.join(__dirname, file));
+      }
+    }
+
+    console.log(`Restored version: ${versionDir}`);
+  }
+}
+
+export default VersionManager;
+
+// File: vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+})
+

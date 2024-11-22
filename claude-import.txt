@@ -1,0 +1,119 @@
+// Project: Orbital Map - A React-based interactive visualization
+// This file contains all the code from the project for easy import into Claude
+
+// File: package.json
+{
+  "name": "orbital-map",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "cmdk": "^0.2.0",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.9.1",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
+
+// File: src/App.jsx
+import React from 'react';
+import EnhancedOrbitalMap from './components/EnhancedOrbitalMap';
+
+function App() {
+  return (
+    <div className="dark h-screen">
+      <EnhancedOrbitalMap />
+    </div>
+  );
+}
+
+export default App;
+
+// File: src/data/initialNodes.js
+export const initialNodes = [
+  { 
+    id: 'center',
+    name: 'Main Organization',
+    type: 'sun',
+    category: 'strategy',
+    status: 'active',
+    description: 'Central organization hub',
+    budget: 5000000,
+    spent: 2100000,
+    team: ['John D. (CEO)', 'Sarah M. (COO)', 'Mike R. (CTO)'],
+    kpis: [
+      { name: 'Revenue Growth', target: '25%', current: '18%' },
+      { name: 'Digital Adoption', target: '80%', current: '65%' },
+      { name: 'Customer Satisfaction', target: '95%', current: '92%' }
+    ],
+    risks: [
+      { severity: 'high', description: 'Market volatility impact' },
+      { severity: 'medium', description: 'Resource constraints' }
+    ],
+    timeline: {
+      start: '2024-01-01',
+      end: '2024-12-31',
+      milestones: [
+        { date: '2024-03-31', description: 'Q1 Digital Strategy Review' },
+        { date: '2024-06-30', description: 'Mid-year Transformation Assessment' }
+      ]
+    },
+    progress: 65
+  },
+  // ... [Rest of initialNodes data]
+];
+
+// File: src/components/OrbitalNode.jsx
+import React, { useState } from 'react';
+
+const categories = {
+  strategy: { color: '#36B37E', name: 'Strategy' },
+  operations: { color: '#6554C0', name: 'Operations' },
+  technology: { color: '#FF8B00', name: 'Technology' },
+  hr: { color: '#FF5630', name: 'HR' }
+};
+
+const OrbitalNode = ({ node, position, onSelect, scale }) => {
+  // ... [OrbitalNode component code]
+};
+
+export default OrbitalNode;
+
+// File: src/hooks/useOrbitalAnimation.js
+import { useState, useEffect, useRef } from 'react';
+
+export const useOrbitalAnimation = (initialScale = 1) => {
+  // ... [useOrbitalAnimation hook code]
+};
+
+// File: src/components/EnhancedOrbitalMap.jsx
+import React, { useState, useEffect } from 'react';
+import { Map, Layout, ZoomIn, ZoomOut, Maximize2, Minimize2 } from 'lucide-react';
+// ... [Rest of imports]
+
+const EnhancedOrbitalMap = () => {
+  // ... [EnhancedOrbitalMap component code]
+};
+
+export default EnhancedOrbitalMap;
+
+// [Additional components and files follow the same pattern]
